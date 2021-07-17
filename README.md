@@ -1,5 +1,5 @@
 # NeuroDB
-This repository contains the implementation of NeuroDB to answer RAQs, k-th nearest neighbour and distance to k-th nearest neighbour queries. It contains a python module tha trains NeuroDB and a c++ module that loads a trained model to answer new queries. 
+This repository contains the implementation of NeuroDB [1] to answer RAQs, k-th nearest neighbour and distance to k-th nearest neighbour queries. It contains a python module tha trains NeuroDB and a c++ module that loads a trained model to answer new queries. 
 
 ## Instalation and requirements
 Run make to compile the c++ module for testing. It's been tested with g++ 7.5 and requires c++11. To train the model, the python module requires tensorflow, numpy, pandas and sklearn. It has been tested with tesorflow 2.4.0, numpy 1.19.5, pandas 1.0.1 and sklearn 0.22.1.
@@ -183,3 +183,6 @@ run\_distNN.py shows an example of how config file should be generated for a dis
 >mean result norm:4.050858021
 >
 >model size:449.1875KB
+
+## Refarence
+[1] Sepanta Zeighami and Cyrus Shahabi. "NeuroDB: A Neural Network Framework for Answering Range Aggregate Queries and Beyond." arXiv preprint arXiv:2107.04922 (2021).
