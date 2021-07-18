@@ -68,10 +68,9 @@ def get_range_agg_queries_and_res(db_dim, size, max_val, q_range, predicate_att_
 
     queries = np.zeros((size, db_dim, 2))
     queries[:, :, 0] = -max_val/2
-    #small noise is added to ensure median of the kd-tree always exists
-    queries[:, :, 0] = queries[:, :, 0]#+np.random.rand(size, db_dim)*0.0001
+    queries[:, :, 0] = queries[:, :, 0]
     queries[:, :, 1] = max_val/2                                        
-    queries[:, :, 1] = queries[:, :, 1]#+np.random.rand(size, db_dim)*0.0001
+    queries[:, :, 1] = queries[:, :, 1]
     queries = queries.reshape((size, db_dim*2))
     size_per_pred_pair = size//active_dim_pairs.shape[0]
 
