@@ -1,17 +1,17 @@
-# NeuroDB
-This repository contains the implementation of NeuroDB [1] to answer RAQs, k-th nearest neighbour and distance to k-th nearest neighbour queries. It contains a python module tha trains NeuroDB and a c++ module that loads a trained model to answer new queries. 
+# NeuroSketch
+This repository contains the implementation of NeuroSketch [1] to answer RAQs. It contains a python module that trains a NeuroSketch and a c++ module that loads a trained model to answer new queries. 
 
 ## Instalation and requirements
 Run make to compile the c++ module for testing. It's been tested with g++ 7.5 and requires c++11. To train the model, the python module requires tensorflow, numpy, pandas and sklearn. It has been tested with tesorflow 2.4.0, numpy 1.19.5, pandas 1.0.1 and sklearn 0.22.1.
 
-## Running NeuroDB
-Running NeuroDB requires first craeting a config file containing all the configurations required and then calling python main.py to train the model. The program automatically generates training and testing data for a given query type and dataset, trains NeuroDB on the training data and runs the c++ module for testing.
+## Running NeuroSketch
+Running NeuroSketch requires first craeting a config file containing all the configurations required and then calling python main.py to train the model. The program automatically generates training and testing data for a given query type and dataset, trains NeuroSketch on the training data and runs the c++ module for testing.
 
 ## Config file
 The file default\_config.py contains the default configuration and explanation for each parameter. Running python default\_config.py creates a json file containing default values.
 
-## Examples
-run\_RAQ.py shows an example of how config file should be generated for an RAQ. It trains and tests NeuroDB on the pm25.npy dataset in folder sample\_datasets. The generated training and test sets, together with the output of the experiment will be save in directory tests/pm25\_RAQ/. Calling python run\_RAQ.py should result in the following output saved in tests/pm25\_RAQ/out.txt
+## Example
+run\_RAQ.py shows an example of how config file should be generated for an RAQ. It trains and tests NeuroSketch on the pm25.npy dataset in folder sample\_datasets. The generated training and test sets, together with the output of the experiment will be save in directory tests/pm25\_RAQ/. Calling python run\_RAQ.py should result in the following output saved in tests/pm25\_RAQ/out.txt
 
 >Starting data collection
 >
@@ -96,93 +96,8 @@ run\_RAQ.py shows an example of how config file should be generated for an RAQ. 
 >mean result norm:1018.335022
 >
 >model size:377.9375KB
-
-
-run\_distNN.py shows an example of how config file should be generated for a distance to nearest neighbour query. It trains and tests NeuroDB on the gv25\_100k.npy dataset in folder sample\_datasets. The generated training and test sets, together with the output of the experiment will be save in directory tests/gv25\_10k\_distNN/. Calling python run\_distNN.py should result in the following output saved in tests/gv25\_10k\_distNN/out.txt
-
->Starting data collection
->
->Data collection took 4.18s
->
->training model no 0 --------------
->
->Epoch no 100 loss 0.002288664225488901 val_loss 0.001818509423173964 mae 0.037023301769352555 val_mae 0.032014946142832436
->
->training model no 1 --------------
->
->Epoch no 100 loss 0.01327413972467184 val_loss 0.005559703800827265 mae 0.09309180315185646 val_mae 0.06738315025965373
->
->training model no 2 --------------
->
->Epoch no 100 loss 0.0017961738631129265 val_loss 0.0032153399661183357 mae 0.03176682700151167 val_mae 0.04679874579111735
->
->training model no 3 --------------
->
->Epoch no 100 loss 0.008066701702773571 val_loss 0.0017443207325413823 mae 0.07328015828282577 val_mae 0.03473069270451864
->
->training model no 4 --------------
->
->Epoch no 100 loss 0.0008311241399496794 val_loss 0.0006309655145741999 mae 0.021368254280690127 val_mae 0.020634313424428303
->
->training model no 5 --------------
->
->Epoch no 100 loss 0.09551838785409927 val_loss 0.02856202982366085 mae 0.24798715639414284 val_mae 0.14199296633402506
->
->training model no 6 --------------
->
->Epoch no 100 loss 0.005137626081705093 val_loss 0.006146854255348444 mae 0.054363419424812744 val_mae 0.06554919481277466
->
->training model no 7 --------------
->
->Epoch no 100 loss 0.007129133678972721 val_loss 0.008502942509949207 mae 0.06235475210273788 val_mae 0.06387211879094441
->
->training model no 8 --------------
->
->Epoch no 100 loss 0.004829985089600086 val_loss 0.007847688160836697 mae 0.05659184515851099 val_mae 0.08159518241882324
->
->training model no 9 --------------
->
->Epoch no 100 loss 0.0029824464581906796 val_loss 0.0016623918199911714 mae 0.04174072075190033 val_mae 0.03413361310958862
->
->training model no 10 --------------
->
->Epoch no 100 loss 0.004609445575624704 val_loss 0.004577321466058493 mae 0.05701213212882948 val_mae 0.05637268225351969
->
->training model no 11 --------------
->
->Epoch no 100 loss 0.028000978752970695 val_loss 0.007074467837810516 mae 0.1284703308681272 val_mae 0.06803729136784871
->
->training model no 12 --------------
->
->Epoch no 100 loss 0.038076236844062805 val_loss 0.06937713176012039 mae 0.1623488293503815 val_mae 0.20955008268356323
->
->training model no 13 --------------
->
->Epoch no 100 loss 0.022435078397393227 val_loss 0.0326092503964901 mae 0.12002047352820823 val_mae 0.1439306139945984
->
->training model no 14 --------------
->
->Epoch no 100 loss 0.0009294074261561036 val_loss 0.0005845865816809237 mae 0.02183964192492407 val_mae 0.0167236328125
->
->training model no 15 --------------
->
->Epoch no 100 loss 0.002784490119665861 val_loss 0.01159862894564867 mae 0.04087308967638315 val_mae 0.09136253595352173
->
->Model Training took 403.35s
->
->Testing model
->
->time:22.28580093 micro seconds
->
->rmse:0.07242497802
->
->avg rel acc:0.01817158423
->
->normalized rmse:0.01787892357
->
->mean result norm:4.050858021
 >
 >model size:449.1875KB
 
 ## Refarence
-[1] Sepanta Zeighami and Cyrus Shahabi. "NeuroDB: A Neural Network Framework for Answering Range Aggregate Queries and Beyond." arXiv preprint arXiv:2107.04922 (2021).
+[1]  Sepanta Zeighami, Cyrus Shahabi, and Vatsal Sharan. 2022. NeuroSketch: A Neural Network Method for Fast and Approximate Evaluation of Range Aggregate Queries. (2022). https://infolab.usc.edu/DocsDemos/neurosketch.pdf
