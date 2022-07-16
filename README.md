@@ -1,5 +1,5 @@
 # NeuroSketch
-This repository contains the implementation of NeuroSketch [1] to answer RAQs. It contains a python module that trains a NeuroSketch and a c++ module that loads a trained model to answer new queries. 
+This repository contains the implementation of NeuroSketch to answer RAQs. It contains a python module that trains a NeuroSketch and a c++ module that loads a trained model to answer new queries. 
 
 ## Instalation and requirements
 Run make to compile the c++ module for testing. It's been tested with g++ 7.5 and requires c++11. To train the model, the python module requires tensorflow, numpy, pandas and sklearn. It has been tested with tesorflow 2.4.0, numpy 1.19.5, pandas 1.0.1 and sklearn 0.22.1.
@@ -98,6 +98,3 @@ run\_RAQ.py shows an example of how config file should be generated for an RAQ. 
 >model size:377.9375KB
 >
 >model size:449.1875KB
-
-## Refarence
-[1]  Sepanta Zeighami, Cyrus Shahabi, and Vatsal Sharan. 2022. NeuroSketch: A Neural Network Method for Fast and Approximate Evaluation of Range Aggregate Queries. (2022). https://infolab.usc.edu/DocsDemos/neurosketch.pdf
