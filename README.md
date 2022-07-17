@@ -5,7 +5,11 @@ This repository contains the implementation of NeuroSketch to answer RAQs. It co
 Run make to compile the c++ module for testing. It's been tested with g++ 7.5 and requires c++11. To train the model, the python module requires tensorflow, numpy, pandas and sklearn. It has been tested with tesorflow 2.4.0, numpy 1.19.5, pandas 1.0.1, jax 0.3.14 and sklearn 0.22.1.
 
 ## Running NeuroSketch
-Running NeuroSketch requires first craeting a config file containing all the configurations required and then calling python main.py to train the model. The program automatically generates training and testing data for a given query type and dataset, trains NeuroSketch on the training data and runs the c++ module for testing.
+Running NeuroSketch requires first craeting a config file containing all the configurations required and then calling 
+```
+python main.py
+```
+to train the model. The program automatically generates training and testing data for a given query type and dataset, trains NeuroSketch on the training data and runs the c++ module for testing.
 
 ## Config file
 The file default\_config.py contains the default configuration and explanation for each parameter. Running python default\_config.py creates a json file containing default values.
