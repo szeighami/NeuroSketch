@@ -1,8 +1,8 @@
 import json
 
 config={}
-config['path_to_NeuroDB'] = "" #absolute path to NeuroDB files
-config['exp_name'] = "" #test results are written in folder path_to_NeuroDB/tests/exp_name
+config['path_to_neurosketch'] = "" #absolute path to neurosketch files
+config['exp_name'] = "" #test results are written in folder path_to_neurosketch/tests/exp_name
 config['query_type'] = "" #supported types are "RAQ", "dist_NN" and "NN" 
 
 config['data_loc'] = "" #path to the dataset. Must be a .npy file
