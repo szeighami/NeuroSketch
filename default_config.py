@@ -3,7 +3,7 @@ import json
 config={}
 config['path_to_neurosketch'] = "" #absolute path to neurosketch files
 config['exp_name'] = "" #test results are written in folder path_to_neurosketch/tests/exp_name
-config['query_type'] = "" #supported types are "RAQ", "dist_NN" and "NN" 
+config['query_type'] = "RAQ" #Answering RAQs
 
 config['data_loc'] = "" #path to the dataset. Must be a .npy file
 config['n'] = 10000 #total data size
@@ -35,8 +35,6 @@ config['active_pred_dim'] = 1 #no. active attributes
 config['active_pred_dim_pairs'] = 10 #if active_pred_dim!=1, no. different active attribut pairs to use
 config['MAX_VAL'] = 10 #normaliation range for RAQs
 
-#workload specification for NN/dist_NN queries
-config['k_th'] = 100
 
 #training parallelization
 config['no_processes'] = 1 #number of different neural networks to train simultaneously
