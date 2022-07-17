@@ -12,9 +12,7 @@ python main.py
 to train the model. The program automatically generates training and testing data for a given query type and dataset, trains NeuroSketch on the training data and runs the c++ module for testing.
 
 ## Config file
-The file default\_config.py contains the default configuration and explanation for each parameter. Running 
-```python default\_config.py```
-creates a json file containing default values.
+The file default\_config.py contains the default configuration and explanation for each parameter. Running  ```python default_config.py``` creates a json file containing default values.
 
 ## Example
 run\_RAQ.py shows an example of how config file should be generated for an RAQ. It trains and tests NeuroSketch on the pm25.npy dataset in folder sample\_datasets. The generated training and test sets, together with the output of the experiment will be save in directory tests/pm25\_RAQ/. Calling python run\_RAQ.py should result in the following output saved in tests/pm25\_RAQ/out.txt
