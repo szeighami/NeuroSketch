@@ -44,7 +44,7 @@ class Node:
             str_cnt+=self.children[i].get_params(file_name, node_id+str(i+1))
         return str_cnt
         
-def train_model(x, y, test_x, test_y, processes, no_processes, no, base_name, path, path_to_neurodb):
+def train_model(x, y, test_x, test_y, processes, no_processes, no, base_name, path, path_to_neurosketch):
     leaf = Node()
 
     if len(processes) == no_processes:
@@ -58,7 +58,7 @@ def train_model(x, y, test_x, test_y, processes, no_processes, no, base_name, pa
     np.save('test'+str(no)+'_res.npy', test_y);
 
     print("training model no "+str(no)+" --------------")
-    p = subprocess.Popen(["python", path_to_neurodb+"/fit_base.py", str(no), base_name, path])  
+    p = subprocess.Popen(["python", path_to_neurosketch+"/fit_base.py", str(no), base_name, path])  
     processes.append(p)
 
     return leaf, processes
@@ -88,9 +88,9 @@ def get_child_res(i, x, root, fanout, test_x, y, test_y):
     test_y_i=test_y[test_indx, :]
     return x_i, test_x_i, y_i, test_y_i
 
-def build_tree(depth, fanout, dim, x, y, test_x, test_y, processes, base_name, path, no, split_dim, no_processes, path_to_neurodb):
+def build_tree(depth, fanout, dim, x, y, test_x, test_y, processes, base_name, path, no, split_dim, no_processes, path_to_neurosketch):
     if depth == 0:
-        leaf, processes = train_model(x, y, test_x, test_y, processes, no_processes, no, base_name, path, path_to_neurodb)
+        leaf, processes = train_model(x, y, test_x, test_y, processes, no_processes, no, base_name, path, path_to_neurosketch)
         no+=1
         return leaf, no, processes
 
@@ -99,7 +99,7 @@ def build_tree(depth, fanout, dim, x, y, test_x, test_y, processes, base_name, p
     root.children = []
     for i in range(fanout):
         x_i, test_x_i, y_i, test_y_i = get_child_res(i, x, root, fanout, test_x, y, test_y) 
-        child, no, processes = build_tree(depth-1, fanout, dim, x_i, y_i, test_x_i, test_y_i, processes, base_name, path+str(i+1), no, (root.split_dim+1)%dim, no_processes, path_to_neurodb)
+        child, no, processes = build_tree(depth-1, fanout, dim, x_i, y_i, test_x_i, test_y_i, processes, base_name, path+str(i+1), no, (root.split_dim+1)%dim, no_processes, path_to_neurosketch)
         root.children.append(child)
 
     return  root, no, processes
