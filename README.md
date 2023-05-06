@@ -1,17 +1,17 @@
 # NeuroSketch
-This repository contains the implementation of NeuroSketch [1], and it's extension NeuroDB [2], to answer range aggregate queries, $k$-th nearest neighbour and distance to $k$-th nearest neighbour queries. It contains a python module tha trains NeuroDB and a c++ module that loads a trained model to answer new queries. 
+This repository contains the implementation of NeuroSketch [1], and it's extension NeuroDB [2], to answer range aggregate queries, $k$-th nearest neighbour and distance to $k$-th nearest neighbour queries. It contains a python module tha trains NeuroSketch and a c++ module that loads a trained model to answer new queries. 
 
 ## Instalation and requirements
 Run make to compile the c++ module for testing. It's been tested with g++ 7.5 and requires c++11. To train the model, the python module requires tensorflow, numpy, pandas and sklearn. It has been tested with tesorflow 2.4.0, numpy 1.19.5, pandas 1.0.1 and sklearn 0.22.1.
 
 ## Running NeuroSketch
-Running NeuroDB requires first craeting a config file containing all the configurations required and then calling python main.py to train the model. The program automatically generates training and testing data for a given query type and dataset, trains NeuroDB on the training data and runs the c++ module for testing.
+Running NeuroSketch requires first craeting a config file containing all the configurations required and then calling python main.py to train the model. The program automatically generates training and testing data for a given query type and dataset, trains NeuroSketch on the training data and runs the c++ module for testing.
 
 ## Config file
 The file default\_config.py contains the default configuration and explanation for each parameter. Running python default\_config.py creates a json file containing default values.
 
 ## Examples
-run\_RAQ.py shows an example of how config file should be generated for an RAQ. It trains and tests NeuroDB on the pm25.npy dataset in folder sample\_datasets. The generated training and test sets, together with the output of the experiment will be save in directory tests/pm25\_RAQ/. Calling python run\_RAQ.py should result in the following output saved in tests/pm25\_RAQ/out.txt
+run\_RAQ.py shows an example of how config file should be generated for an RAQ. It trains and tests NeuroSketch on the pm25.npy dataset in folder sample\_datasets. The generated training and test sets, together with the output of the experiment will be save in directory tests/pm25\_RAQ/. Calling python run\_RAQ.py should result in the following output saved in tests/pm25\_RAQ/out.txt
 
 >Starting data collection
 >
@@ -98,7 +98,7 @@ run\_RAQ.py shows an example of how config file should be generated for an RAQ. 
 >model size:377.9375KB
 
 
-run\_distNN.py shows an example of how config file should be generated for a distance to nearest neighbour query. It trains and tests NeuroDB on the gv25\_100k.npy dataset in folder sample\_datasets. The generated training and test sets, together with the output of the experiment will be save in directory tests/gv25\_10k\_distNN/. Calling python run\_distNN.py should result in the following output saved in tests/gv25\_10k\_distNN/out.txt
+run\_distNN.py shows an example of how config file should be generated for a distance to nearest neighbour query. It trains and tests NeuroSketch on the gv25\_100k.npy dataset in folder sample\_datasets. The generated training and test sets, together with the output of the experiment will be save in directory tests/gv25\_10k\_distNN/. Calling python run\_distNN.py should result in the following output saved in tests/gv25\_10k\_distNN/out.txt
 
 >Starting data collection
 >
