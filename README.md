@@ -187,4 +187,4 @@ run\_distNN.py shows an example of how config file should be generated for a dis
 ## Refarence
 [1] Sepanta Zeighami, Cyrus Shahabi and Vatsal Sharan. "NeuroSketch: Fast and Approximate Evaluation of Range Aggregate Queries with Neural Networks." Proceedings of the 2023 International Conference on Management of Data, SIGMOD 23.
 
-[2] Sepanta Zeighami and Cyrus Shahabi. "NeuroDB: A Neural Network Framework for Answering Range Aggregate Queries and Beyond." arXiv preprint arXiv:2107.04922 (2021).
+[2] Sepanta Zeighami and Cyrus Shahabi. "NeuroDB: A Neural Network Framework for Answering Range Aggregate Queries and Beyond." arXiv preprint arXiv:2107.04922.
