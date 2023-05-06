@@ -1,10 +1,10 @@
-# NeuroDB
-This repository contains the implementation of NeuroDB [1] to answer range aggregate queries, k-th nearest neighbour and distance to k-th nearest neighbour queries. It contains a python module tha trains NeuroDB and a c++ module that loads a trained model to answer new queries. 
+# NeuroSketch
+This repository contains the implementation of NeuroSketch [1], and it's extension NeuroDB [2], to answer range aggregate queries, $k$-th nearest neighbour and distance to $k$-th nearest neighbour queries. It contains a python module tha trains NeuroDB and a c++ module that loads a trained model to answer new queries. 
 
 ## Instalation and requirements
 Run make to compile the c++ module for testing. It's been tested with g++ 7.5 and requires c++11. To train the model, the python module requires tensorflow, numpy, pandas and sklearn. It has been tested with tesorflow 2.4.0, numpy 1.19.5, pandas 1.0.1 and sklearn 0.22.1.
 
-## Running NeuroDB
+## Running NeuroSketch
 Running NeuroDB requires first craeting a config file containing all the configurations required and then calling python main.py to train the model. The program automatically generates training and testing data for a given query type and dataset, trains NeuroDB on the training data and runs the c++ module for testing.
 
 ## Config file
@@ -185,4 +185,6 @@ run\_distNN.py shows an example of how config file should be generated for a dis
 >model size:449.1875KB
 
 ## Refarence
-[1] Sepanta Zeighami and Cyrus Shahabi. "NeuroDB: A Neural Network Framework for Answering Range Aggregate Queries and Beyond." arXiv preprint arXiv:2107.04922 (2021).
+[1] Sepanta Zeighami, Cyrus Shahabi and Vatsal Sharan. "NeuroSketch: Fast and Approximate Evaluation of Range Aggregate Queries with Neural Networks." Proceedings of the 2023 International Conference on Management of Data, SIGMOD 23.
+
+[2] Sepanta Zeighami and Cyrus Shahabi. "NeuroDB: A Neural Network Framework for Answering Range Aggregate Queries and Beyond." arXiv preprint arXiv:2107.04922 (2021).
